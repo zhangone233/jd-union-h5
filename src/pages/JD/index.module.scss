@@ -5,12 +5,23 @@
 
   .product-classify {
     color: #000;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .tab-box {
+      height: 50rpx;
+    }
 
     .conditional-sort-box {
       width: 100%;
+      height: 50rpx;
     }
 
     .tab-panel-box {
+      flex: 1;
+      height: 0;
+      overflow-y: auto;
     }
   }
 }

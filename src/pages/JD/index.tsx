@@ -5,6 +5,7 @@ import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab, ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 import ConditionalSort from '@pages/JD/components/conditionalSort';
+import ProductList from './components/productList';
 
 const App: FC = () => {
   const [selectedTab, setSelectedTab] = useState<string>('2');
@@ -17,16 +18,18 @@ const App: FC = () => {
     <div className={styles.container}>
       <div className={styles.productClassify}>
         <TabContext value={selectedTab}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList
-              onChange={handleTabChange}
-              aria-label="product classify tabs"
-            >
-              <Tab label="Item One" value="1" />
-              <Tab label="Item Two" value="2" />
-              <Tab label="Item Three" value="3" />
-            </TabList>
-          </Box>
+          <div className={styles.tabBox}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+              <TabList
+                onChange={handleTabChange}
+                aria-label="product classify tabs"
+              >
+                <Tab label="Item One" value="1" />
+                <Tab label="Item Two" value="2" />
+                <Tab label="Item Three" value="3" />
+              </TabList>
+            </Box>
+          </div>
 
           <div className={styles.conditionalSortBox}>
             <ConditionalSort />
@@ -34,13 +37,13 @@ const App: FC = () => {
 
           <div className={styles.tabPanelBox}>
             <TabPanel className={styles.tabPanel} value="1">
-              Item One
+              <ProductList eliteId={selectedTab} />
             </TabPanel>
             <TabPanel className={styles.tabPanel} value="2">
-              Item Two
+              <ProductList eliteId={selectedTab} />
             </TabPanel>
             <TabPanel className={styles.tabPanel} value="3">
-              Item Three
+              <ProductList eliteId={selectedTab} />
             </TabPanel>
           </div>
         </TabContext>
