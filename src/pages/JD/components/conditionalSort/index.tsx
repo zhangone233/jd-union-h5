@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { KeyboardArrowUp, KeyboardArrowDown } from '@mui/icons-material';
 
-interface IIndexProps extends ToggleButtonGroupProps { }
+interface IIndexProps extends ToggleButtonGroupProps {}
 const Index: FC<IIndexProps> = ({ value, onChange }) => {
   const [priceAscending, setPriceAscending] = useState(true);
   const [salesAscending, setSalesAscending] = useState(true);
