@@ -4,6 +4,7 @@ declare const styles: {
   readonly "tabBox": string;
   readonly "conditionalSortBox": string;
   readonly "tabPanelBox": string;
+  readonly "tabPanel": string;
 };
 export = styles;
 

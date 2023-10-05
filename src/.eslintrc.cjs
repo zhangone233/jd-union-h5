@@ -1,6 +1,16 @@
 module.exports = {
   extends: ['../.eslintrc.cjs'],
   plugins: ['import'],
+
+  // parserOptions: {
+  //   ecmaVersion: 2020,
+  //   ecmaFeatures: {
+  //     //设置支持的语言选项，比如支持ES6 JSX语法等等
+  //     blockBindings: true,
+  //     forOf: true,
+  //     jsx: true,
+  //   },
+  // },
   rules: {
     // Ensure imports are correctly sorted and grouped
     // 'import/order': [
@@ -45,6 +55,6 @@ module.exports = {
     'import/extensions': 0,
 
     // off
-    'import/newline-after-last-import': 0
+    'import/newline-after-last-import': 0,
   },
 };

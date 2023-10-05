@@ -18,6 +18,7 @@ export default defineConfig({
       '@utils': '/src/utils',
       '@assets': '/src/assets',
       '@service': '/src/service',
+      '@constants': '/src/constants',
       '@components': '/src/components'
     }
   },

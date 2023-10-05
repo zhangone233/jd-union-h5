@@ -21,7 +21,11 @@
     .tab-panel-box {
       flex: 1;
       height: 0;
-      overflow-y: auto;
+      overflow: hidden;
+
+      .tabPanel {
+        padding: 14rpx;
+      }
     }
   }
 }

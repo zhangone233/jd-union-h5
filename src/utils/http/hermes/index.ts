@@ -43,8 +43,7 @@ export class Hermes {
         console.warn('This request is invalid for baseUrl');
       url = `${_baseUrl}${uri}`;
     }
-    if (/^GET$/i.test(method!))
-      url += this._stringify<Req>(query);
+    if (/^GET$/i.test(method!)) url += this._stringify<Req>(query);
     return url;
   }
 
@@ -150,10 +149,10 @@ export class Hermes {
 
   public request2<Res, Req, TRes = WrapperResp<Res>>(
     options: RequestOptions<Req>,
-  ) {
+  ): Promise<[err: unknown | null, res: TRes]> {
     return this.request<Res, Req, TRes>(options)
-      .then((res) => [null, res])
-      .catch((err) => [err, null]);
+      .then<[null, TRes]>((res) => [null, res])
+      .catch<[unknown, TRes]>((err) => [err, null as TRes]);
   }
 }
 
